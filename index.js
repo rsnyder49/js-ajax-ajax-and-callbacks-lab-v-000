@@ -27,10 +27,10 @@ function showCommits(ele) {
 function getCommit(commit) {
   
   return `<li><h3>Sha: ${commit.sha}</h3>
-           <img src="${commit.author.avatar_url}" alt="avatar" height="42"><br>
-           <strong>Name: </strong>${commit.commit.author.name}<br>
-           <strong>Login: </strong>${commit.author.login}<br>
-           <p><strong>Message: </strong>${commit.commit.message}</p></li>`
+         <img src="${commit.author.avatar_url}" alt="avatar" height="42"><br>
+         <strong>Name: </strong>${commit.commit.author.name}<br>
+         <strong>Login: </strong>${commit.author.login}<br>
+         <p><strong>Message: </strong>${commit.commit.message}</p></li>`;
  }
  
  
