@@ -3,7 +3,7 @@ $(document).ready(function (){
 
 function displayError(error) {
   $('#errors').html("There was an error, please try again.");
- }
+}
  
 function displayRepositories(result) {
   return `<strong>Name: </strong>${result.name}<br>
@@ -30,7 +30,14 @@ function getCommit(commit) {
          <strong>Name: </strong>${commit.commit.author.name}<br>
          <strong>Login: </strong>${commit.author.login}<br>
          <p><strong>Message: </strong>${commit.commit.message}</p></li>`;
- }
+}
+ 
+function getCommits(data) {
+  const result = data.map( commit => getCommit(commit)).join('');
+  return `<ul>${result}</ul>`;
+}
+
+
  
  
  
