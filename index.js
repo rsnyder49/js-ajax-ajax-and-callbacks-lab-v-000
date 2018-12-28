@@ -12,3 +12,18 @@ function displayRepositories(result) {
          <a href="#" data-repository="${result.name}" data-owner="${result.owner.login}"
            onclick="showCommits(this)">Show Commits</a><br></br>`;
 }
+
+function showCommits(ele) {
+  const repo  = ele.dataset.repository;
+  const owner = ele.dataset.owner;
+ 
+  $.get(`https://api.github.com/repos/${owner}/${repo}/commits`).done(function(data) {
+     $('#details').html(getCommits(data));
+   }).fail(function(error) {
+     displayError(error);
+   });
+ }
+ 
+ 
+ 
+ 
