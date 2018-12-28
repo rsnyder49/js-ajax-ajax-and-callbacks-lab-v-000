@@ -41,7 +41,15 @@ function getRepositories(data) {
    return data.items.map( result => displayRepositories(result));
 }
 
-
+function searchRepositories() {
+  const searchTerms = $('#searchTerms')[0].value;
+ 
+  $.get(`https://api.github.com/search/repositories?q=${searchTerms}`).done(function(data) {
+     $('#results').html(getRepositories(data));
+   }).fail(function(error) {
+     displayError(error);
+  });
+}
 
 
  
